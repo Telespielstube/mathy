@@ -39,7 +39,10 @@ namespace math {
     }
 
     template <typename T> T Arithmetic::div(T a, T b) {
-        if (b == 0) {
+        if (b == 0 && a == 0) {
+            throw std::logic_error("Division 0 by 0!");
+        }
+        if (b == 0)  {
             throw std::invalid_argument("Division by zero!");
         }
         return a / b;
